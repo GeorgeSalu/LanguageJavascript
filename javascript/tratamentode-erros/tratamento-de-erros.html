@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function ShowMessage(){
+            
+            try{
+                axxxxxlert("Hello World");
+            }catch(err){
+                txt = "There was an error on this page.";
+                txt += "Error Description "+err.message;
+                alert(txt);
+            }finally{
+                document.getElementById("out1").innerHTML = "Finnaly"
+            }
+            
+        }
+    
+        function testThrow(){
+            
+            try{
+                var x = document.getElementById("userInput").value;
+                if(x == "") throw "empty";
+                if(x>10) throw "too high";
+                if(x<0) throw "too low";
+            }catch(err){
+                alert("Error : "+err);
+            }finally{
+                
+            }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="ShowMessage()">click Try..Catch</button>
+    </p>
+    
+    <p id="out1"></p>
+    <br/>
+    
+    <p>
+        Please input a number between 1 and 10 : <br/>
+        <input type="text" id="userInput">
+        <button onclick="testThrow()">Teste Throw</button>
+    </p>
+    
+</body>
+</html>
