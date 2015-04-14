@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        
+        function myFunction(){
+            alert("Hello World");
+        }
+    
+        function myCalc(x,y){
+            return x*y;
+        }
+        
+        function myResult(){
+            document.getElementById("demo").innerHTML = myCalc(4,3);
+        }
+    </script>
+</head>
+<body>
+    <!-- chamando Através de eventos  -->
+    <p>
+        <button onclick="myFunction()">Click Aqui</button>
+    </p>
+    
+    <p>
+        <button onclick="myResult()">Click Result</button>
+    </p>
+    
+    <p>
+        <span id="demo" name="demo">Result Here</span>
+    </p>
+</body>
+</html>
