@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function testIf(){
+            var x = 10;
+            var y = 10;
+            var result;
+            
+            if(x == y){
+                result = "x é igual a y";
+            }else{
+                result = "x é diferente de y";
+            }
+            
+            document.getElementById("demo").innerHTML = result;
+        }
+    
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="testIf()">click Here to test If</button>
+    </p>
+    <p>
+        <span id="demo" name="demo"></span>
+    </p>
+</body>
+</html>
