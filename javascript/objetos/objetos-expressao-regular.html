@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestRegExp1(){
+            
+            var str = "Euclides Chuma is a Developer";
+            var patt = /chuma/i;
+            
+            alert(str.match(patt));
+            
+        }
+    
+        function TestRegExp2(){
+            
+            var str = "Euclides Chuma is a Develop. Devemedia is a company";
+            var patt = /is/g;
+            
+            alert(str.match(patt));
+            
+        }
+        
+        function TestRegExp3(){
+            
+            var patt = new RegExp("chuma","i");
+            alert(patt.test("Euclides Chuma is a Develop"));
+            
+        }
+        
+        function TestRegExp4(){
+            
+            var patt = new RegExp("IS","i");
+            alert(patt.exec("Euclides Chuma is a developer"));
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestRegExp1()">click regexp</button>
+    </p>
+    
+    <p>
+        <button onclick="TestRegExp2()">click regexp 2</button>
+    </p>
+    
+    <p>
+        <button onclick="TestRegExp3()">click regexp 3</button>
+    </p>
+    
+    <p>
+        <button onclick="TestRegExp4()">Click RegExp 4</button>
+    </p>
+</body>
+</html>

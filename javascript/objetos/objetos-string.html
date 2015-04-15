@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestString1(){
+            
+            var name = "George salu";
+            var character = name[9];
+            
+            alert(character);
+            
+        }
+        
+        function TestString2(){
+            
+            var name = "George Salu";
+            var x = name.length
+            
+            alert(x);
+        }
+        
+        function TestString3(){
+            
+            var str = "Ola George Salu";
+            var n = str.indexOf("George")
+            
+            alert(n);
+        }
+    
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestString1()">Click Here Test String</button>
+    </p>
+    
+    <p>
+        <button onclick="TestString2()">Click Here Test String Length</button>
+    </p>
+    
+    <p>
+        <button onclick="TestString3()">Click Here Test String posicao</button>
+    </p>
+</body>
+</html>

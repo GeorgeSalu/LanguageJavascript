@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestDate(){
+            
+            var myDateNow = new Date();
+            alert(myDateNow);
+            
+        }
+    
+        function TestDate2(){
+            
+            var d = new Date();
+            alert(d.getFullYear());
+            
+        }
+        
+        function TestDate3(){
+            
+            var d = new Date();
+            d.setFullYear(2100,6,13);
+            alert(d);
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestDate()">Click data Object</button>
+    </p>
+    
+    <p>
+        <button onclick="TestDate2()">click data Object year</button>
+    </p>
+    
+    <p>
+        <button onclick="TestDate3()">Click data Object</button>
+    </p>
+</body>
+</html>

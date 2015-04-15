@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestGlobal1(){
+            
+            var result = "the 123 in NaN is "+isNaN(123)+"\n";
+            result = result + "The 3.14 NaN is "+isNaN(3.14)+"\n";
+            result = result + "The Euclides in NaN "+isNaN("Euclides");
+            
+            alert(result);
+            
+        }
+    
+        function TestGlobal2(){
+            
+            var result = "the 10 in NaN is "+parseFloat("10")+"\n";
+            result = result + "The 3.14 NaN is "+parseFloat("3.14")+"\n";
+            result = result + "The Euclides in NaN "+parseFloat("Euclides");
+            
+            alert(result);
+            
+        }
+        
+        function TestGlobal3(){
+            
+            var out = escape("Euclides Chuma is a Develop");
+            alert(out);
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestGlobal1()">Click Here To test Global Functions and Properties</button>
+    </p>
+    
+    <p>
+        <button onclick="TestGlobal2()">Click Here To test Global Functions and Properties</button>
+    </p>
+    
+    <p>
+        <button onclick="TestGlobal3()">Click Here To test Global Functions and Properties</button>
+    </p>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestArray1(){
+            
+            var fruits = new Array();
+            fruits[0] = "apple";
+            fruits[1] = "Lemo";
+            fruits[2] = "orange";
+            fruits[3] = "Pinapple";
+            
+            alert(fruits[1]);
+        }
+    
+        function TestArray2(){
+            
+            var myColors = new Array();
+            myColors[0] = "Red";
+            myColors[1] = "Green";
+            myColors[2] = "Blue";
+            myColors[3] = "Yellow";
+            myColors[4] = "Black";
+            myColors[5] = "white";
+            
+            var i;
+            var out = "";
+            
+            for(i = 0;i < myColors.length;i++){
+                out = out + myColors[i] + "<br>";
+            }
+            
+            document.getElementById("demo").innerHTML = out;
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestArray1()">click TestArray</button>
+    </p>
+    
+    <p>
+        <button onclick="TestArray2()">Click testeArray2</button>
+    </p>
+    
+    <p>
+        <span id="demo" name="demo">Result is here</span>
+    </p>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestArray1(){
+            
+            var fruits = new Array();
+            fruits[0] = "apple";
+            fruits[1] = "lemon";
+            fruits[2] = "orange";
+            fruits[3] = "strawberry";
+            
+            alert(fruits.length);
+            
+        }
+        
+        function TestArray2(){
+            
+            var cars = ["fiat","ford"];
+            var cars2 = ["ferrari","bmw","Audi"];
+            var carsFinal = cars.concat(cars2);
+            
+            var i;
+            var out = "";
+            for(i = 0;i < carsFinal.length;i++){
+                
+                out = out + carsFinal[i] + "<br>";
+                
+            }
+            
+            document.getElementById("demo").innerHTML = out;
+        }
+    
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestArray1()">Click here test array</button>
+    </p>
+    
+    <p>
+        <button onclick="TestArray2()">Click here testArray 2</button>
+    </p>
+    
+    <p>
+        <span id="demo">Result</span>
+    </p>
+</body>
+</html>

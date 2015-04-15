@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function TestBoolean(){
+            
+            var booleanTest = new Boolean("1");
+            var x = booleanTest.valueOf();
+            
+            alert("the objetc is Boolean: "+x);
+            
+        }
+    
+        function TestNumber(){
+            
+            var x = Number.MAX_VALUE;
+            alert(x);
+            
+        }
+        
+        function TestNumber2(){
+            
+            var num = 3.14159;
+            var n = num.toFixed(2);
+            alert(n);
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="TestBoolean()">Click test Boolean Objetc</button>
+    </p>
+    <p>
+        <button onclick="TestNumber()">Click Number Objetc</button>
+    </p>
+    <p>
+        <button onclick="TestNumber2()">Click Number Objects 2</button>
+    </p>
+</body>
+</html>
