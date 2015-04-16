@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function myCars(car1,car2,callback)   
+        {
+            alert("My favorite colors are : "+car1+" , "+car2+);
+            callback();
+        }
+    
+        function otherMyCars()
+        {
+            alert("My Other favorite cars are: ferrari and porshe");
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="myCars('BMW','Audi',otherMyCars);">
+            Click Here To Test 1 of callback
+        </button>
+    </p>
+</body>
+</html>
