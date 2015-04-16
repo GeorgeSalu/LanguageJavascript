@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function testOnLoad(){
+            
+            alert("Hello World !! Page in Load");
+            
+        }
+    
+        function showKeyPress(){
+            
+            var x = event.which;
+            keychar = String.fromCharCode(x);
+            alert("The Key "+keychar+" was pressed ");
+            
+        }
+        
+    </script>
+</head>
+<body onload="testOnLoad()">
+    <p>
+        Test onkeyPress : <input type="text" onkeypress="showKeyPress()">
+    </p>
+</body>
+</html>
