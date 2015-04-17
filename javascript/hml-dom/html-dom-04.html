@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function changeText(id)
+        {
+            id.innerHTML = "Thank you my frieds. (new version)"
+        }
+    
+    </script>
+</head>
+<body>
+   
+    <h1 onclick="this.innerHTML='Thank you my frieds'">Please, click on this text</h1>
+
+    <br/>
+    
+    <h1 onclick="changeText(this)">Please, click on this text! (new version)</h1>
+
+    <p id="demo"></p>
+    <button id="myBtn">Show date</button>
+    
+    <script type="text/javascript">
+        document.getElementById("myBtn").onclick = function(){
+            displayDate()
+        }
+        
+        function displayDate()
+        {
+            document.getElementById("demo").innerHTML = Date()
+        }
+    </script>
+</body>
+</html>

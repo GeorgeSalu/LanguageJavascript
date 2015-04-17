@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="myDivNew">
+        <p id="p1New">JavaScript language</p>
+        <p id="p2New">Linux Os System</p>
+    </div>
+    
+    <script type="text/javascript">
+    
+        var newP = document.createElement("p");
+        var node = document.createTextNode("Hello World ! This is a new paragraph");
+        newP.appendChild(node);
+        
+        var myElement = document.getElementById("myDivNew");
+        myElement.appendChild(newP);
+    
+    </script>
+    <br/>
+    
+    <div id="myDivRemove">
+        <p id="p1Remove">Remover paragrafo</p>
+        <p id="p2Remove">Remover paragrafo 2</p>
+    </div>
+    
+    <script type="text/javascript">
+    
+        var parent = document.getElementById("myDivRemove");
+        var child = document.getElementById("p1Remove");
+        
+        parent.removeChild(child);
+    
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function testFindById(){
+            
+            x = document.getElementById("demoById");
+            alert(x.innerHTML);
+            
+        }
+        
+        function testFindByTagName(){
+            
+            var x = document.getElementById("main");
+            var y = x.getElementsByTagName("p");
+            
+            alert(y[0].innerHTML)
+            
+        }
+    
+    </script>
+</head>
+<body>
+    <p>
+        <button onclick="testFindById()">Click here Test Find Html</button>
+    </p>
+    
+    <p>
+        <button onclick="testFindByTagName()">Click here Test tag name</button>
+    </p>
+    
+    <p id="demoById">
+        HelloWorld
+    </p>
+    
+    
+    <div id="main">
+        <p>
+            Javascript is Language Program
+        </p>
+        <p>
+            Stallman is a develop
+        </p>
+        <p>
+            Linux Os
+        </p>
+    </div>
+</body>
+</html>

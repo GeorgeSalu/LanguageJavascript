@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>html dom</p>
+    
+    <script type="text/javascript">
+    
+        document.write(Date());
+    
+    </script>
+    <br/>
+    
+    <h3 id="myHeader">Hello World</h3>
+    
+    <script type="text/javascript">
+    
+        var elementHeader = document.getElementById("myHeader");
+        elementHeader.innerHTML = "New content to myHeader.";
+        
+    </script>
+    <br/>
+    
+    <img id="myImage" src="play.png">
+    
+    <script type="text/javascript">
+    
+        document.getElementById("myImage").src = "grails.jpg"
+    
+    </script>
+    
+</body>
+</html>
