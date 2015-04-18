@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="showSize"></p>
+    
+    <script type="text/javascript">
+    
+        var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        x = document.getElementById("showSize");
+        x.innerHTML = "Browser Window width = "+width+" px and Height = "+height+" px";
+        
+    </script>
+    
+    <button onclick="window.close();">Close</button>
+    
+</body>
+</html>

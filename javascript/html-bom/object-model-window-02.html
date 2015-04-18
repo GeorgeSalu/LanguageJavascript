@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    
+        function showRes()
+        {
+            var width = screen.availWidth;
+            var height = screen.availHeight;
+            
+            document.getElementById("resWidth").innerHTML = width;
+            document.getElementById("resHeight").innerHTML = height;
+        }
+    
+        function showURL()
+        {
+            var currentURL = location.href;
+            document.getElementById("myURL").innerHTML = currentURL;
+        }
+        
+        function newSite()
+        {
+            window.location.assign("https://www.kernel.org/");
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <p id="resWidth"></p>
+    <p id="resHeight"></p>
+    <button onclick="showRes()">Show informations screen</button>
+    <br/>
+    
+    <p id="myURL"></p>
+    <button onclick="showURL()">Show URL</button>
+    <br/><br/>
+    
+    <button onclick="newSite()">Load Linux Site</button>
+    
+</body>
+</html>

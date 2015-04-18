@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Window popup Boxes</title>
+    <script type="text/javascript">
+    
+        function MyAlertBox()
+        {
+            alert("This is a alert box");
+        }
+        
+        function MyConfirmBox()
+        {
+            var result;
+            var press = confirm("Are you a develop");
+            
+            if(press == true)
+            {
+                result = "you pressed ok";
+            }else
+            {
+                result = "you pressed cancel";
+            }
+            
+            document.getElementById("show").innerHTML = result;
+        }
+    
+        function myPromptBox()
+        {
+            var result;
+            var car = prompt("Please enter your favorite car ","Ferrari");
+            
+            if(car != null)
+            {
+                result = "Your favorite car is "+car;
+                document.getElementById("show2").innerHTML = result;
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <button onclick="MyAlertBox()">Alert Box</button>
+    <br/>
+    
+    <button onclick="MyConfirmBox()">Confirm Box</button>
+    <p id="show"></p>
+    <br/>
+    
+    <button onclick="myPromptBox()">Prompt Box</button>
+    <p id="show2"></p>
+    
+</body>
+</html>

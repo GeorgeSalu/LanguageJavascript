@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window Nagivation</title>
+    <script type="text/javascript">
+    
+        function goBack()
+        {
+            window.history.back();
+        }
+    
+        function goForward()
+        {
+            window.history.forward();
+        }
+        
+        function showInfo()
+        {
+            var txtInfo = "<p> Browser : "+navigator.appVersion+" </p>";
+            txtInfo += "<p> Cookies enable : "+navigator.cookieEnabled+" </p>";
+            txtInfo += "<p> Plataforma : "+navigator.platform+" </p>";
+            txtInfo += "<p> User-agent header : "+navigator.userAgent+" </p>";
+            
+            
+            document.getElementById("myInfo").innerHTML = txtInfo;
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <button onclick="goBack()">Back</button>
+    
+    <br/>
+    
+    <button onclick="goForward()">Forward</button>
+    
+    <br/>
+    
+    <button onclick="showInfo()">Show information about browser</button>
+    
+    <br/>
+    <div id="myInfo">
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript window timing Events</title>
+    <script type="text/javascript">
+    
+        function MyTest1()
+        {
+            setInterval(function(){ alert("javascript") },2000);
+        }
+    
+        function MyTest2()
+        {
+            setTimeout(function(){alert("Javascript")},5000);
+        }
+        
+    </script>
+</head>
+<body>
+    
+    <button onclick="MyTest1()">Alert Box each 2 seconds</button>
+    <br/>
+    
+    <button onclick="MyTest2()">Alert Box once after 5 seconds</button>
+    <br/>
+    
+    <p id="clock"></p>
+    
+    <script type="text/javascript">
+    
+        var myVar = setInterval(function(){myTimer()},1000);
+    
+        function myTimer()
+        {
+            var d = new Date();
+            var t = d.toLocaleTimeString();
+            document.getElementById("clock").innerHTML = t;
+        }
+    </script>
+</body>
+</html>
