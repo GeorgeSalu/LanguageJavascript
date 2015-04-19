@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - Orientacao a objetos</title>
+</head>
+<body>
+    
+    <script type="text/javascript">
+    
+        /*function Car(speed)
+        {
+            alert("class car Instantieded")
+            this.speed = speed;
+        }
+        
+        Car.prototype.msg_speed = 'This is a message of speed';
+        
+        Car.prototype.setSpeed = function(speed){
+            this.speed = speed;
+            alert("car speed changed");
+        }
+    
+        var car1 = new Car(40);
+        var car2 = new Car(60);
+        
+        //alert("car1 speed : "+car1.speed);
+        //alert("car2 speed : "+car2.speed);
+        
+        alert(car1.msg_speed);
+        
+        car1.setSpeed(120);
+        car2.setSpeed(140);
+        
+        alert("Car1 1 speed : "+car1.speed);
+        alert("car2 speed : "+car2.speed)
+        */
+        
+        function Car(){}
+        
+        Car.prototype.msg_speed = 'This is a message of speed';
+        Car.prototype.setSpeed = function(speed){
+            this.speed = speed;
+            alert("Car speed changed");
+        }
+        
+        function Ferrari(){}
+        Ferrari.prototype = new Car();
+        
+        Ferrari.prototype.constructor = Ferrari;
+        
+        Ferrari.prototype.setSpeed = function(speed){
+            this.speed = speed;
+            alert("Ferrari speed changed");
+        }
+        
+        var ferrarioop = new Ferrari();
+        ferrarioop.setSpeed(20);
+        
+    </script>
+    
+</body>
+</html>
