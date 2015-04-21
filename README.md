@@ -1,2 +1,13 @@
-# -LanguageJavascript
-repositorio de codigos javascript - estudo geral da linguagem ate orientação a objetos
+Repositorio de codigos javascript
+=================================
+topicos vistos nos exercicios
+
+	- Variaveis e Constantes
+	- Eventos
+	- Operadores
+	- Funções
+	- Operador de decisão
+	- Tratamento de Erros
+    - Objetos
+	- Funções Callback
+	- HTML DOM
