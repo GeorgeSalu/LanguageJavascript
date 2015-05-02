@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionando um ou varios elementos com varias classes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="book inactive">
+        <p>Travel guide to NYC</p>
+    </div>
+    <div class="book active">
+        <p>Travel guide to san francisco</p>
+    </div>
+    <div class="book inactive">
+        <p>Travel guide to seatle</p>
+    </div>
+    <div class="book active">
+        <p>Travel guide to miami</p>
+    </div>
+    <div class="book inactive">
+        <p>Travel guide to palo Alto</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.book.inactive').css('display','none');
+        })
+    </script>
+</body>
+</html>
