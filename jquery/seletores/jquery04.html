@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seletor por classe</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div id="container">
+        <h1>Hello Jquery</h1>
+        <div class="telephone">
+            <img src="telefone.jpg">
+        </div>
+        <div class="telephone">
+            <img src="telefone.jpg">
+        </div>
+        <div class="telephone">
+            <img src="telefone.jpg">
+        </div>
+        <div class="telephone">
+            <img src="telefone.jpg">
+        </div>
+        <div class="telephone">
+            <img src="telefone.jpg">
+        </div>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.telephone').css({'padding':'5px','border':'1px solid #ccc','width':'150px'})    
+        });
+    </script>
+</body>
+</html>
