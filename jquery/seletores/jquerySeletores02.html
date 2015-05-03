@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Selecione elementos usando seletores descendentes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <ul class="sidebar-nav">
+        <li>Link 1</li>
+        <li>Link 2</li>
+        <ul>
+            <li>Sub link 1</li>
+            <li>Sub link 2</li>
+        </ul>
+    </ul>
+    
+    <script>
+        $(document).ready(function(){
+            $('ul li').css('border','3px dashed blue');
+        })
+    </script>
+</body>
+</html>
