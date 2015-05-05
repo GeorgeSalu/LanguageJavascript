@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicinando elemento antes e depois de elementos</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <p>I run 4 times a week</p>
+        <p>I lift wieght 3 times a week</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.content').after('<p>I ride a bike 3 times for week</p>')
+        })
+    </script>
+</body>
+</html>

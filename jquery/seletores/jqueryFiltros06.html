@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Seleciona links que contem o endereço de um site especifico</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="http://www.google.com/analytics">Google Analits</a>
+        </li>
+        <li>
+            <a href="http://www.yahoo.com/sports">Yahoo Sports</a>
+        </li>
+    </ul>
+    
+    <script>
+        $(document).ready(function(){
+            $('ul li a[href*=google.com]').addClass('google-icon');
+        })
+    </script>
+</body>
+</html>

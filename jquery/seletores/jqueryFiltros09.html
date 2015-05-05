@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anexe html ao fim e ao inicio de um elemento</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <p>I run 4 times a week</p>
+        <p>I lift weigths 3 times a week</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.content').append('<p>I ride a bike 3 times for week</p>')
+        })
+    </script>
+</body>
+</html>

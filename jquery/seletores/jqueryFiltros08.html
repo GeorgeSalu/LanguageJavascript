@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicione html ao dom</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <p>I run 4 times a week</p>
+        <p>I lift weight 3 times a week</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.content').html('<div class="main">Hello Jquery</div>');
+            $('.content').text('Testing 1 2 3 4');
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filtrando elementos que contem texto</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>Product</td>
+            <td>Descript</td>
+            <td>Price</td>
+        </tr>
+        <tr>
+            <td>Paper Towerls</td>
+            <td>The most absorvent paper towers</td>
+            <td>$ 18,00</td>
+        </tr>
+        <tr>
+            <td>Paper Napkins</td>
+            <td>Perfect for your outdoor gathering</td>
+            <td>$ 16.99</td>
+        </tr>
+        <tr>
+            <td>Platic Forks</td>
+            <td>The essential picnic accessory</td>
+            <td>$ 2.99</td>
+        </tr>
+    </table>
+    
+    <script>
+        $(document).ready(function(){
+            $("tr td:contains('Paper Towerls')").css('border','1px dashed #333');
+        })
+    </script>
+</body>
+</html>
