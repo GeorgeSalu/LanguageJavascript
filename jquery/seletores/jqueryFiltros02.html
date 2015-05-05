@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicando estilo ao primeiro e ao ultimo elemento</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        ul {width: 200px;font-family: arial;}
+        ul li {border-bottom: 1px solid #333;}
+        ul li a {text-decoration: none;}
+    </style>
+</head>
+<body>
+    <div id='sidebar'>
+        <h1>My sidebar</h1>
+        <ul>
+            <li><a href='/index'>Home</a></li>
+            <li><a href='/about'>About Us</a></li>
+            <li><a href='/custom-service'>Custom Service</a></li>
+            <li><a href='/contact'>Contact Us</a></li>
+            <li><a href='/coupons'>Coupons</a></li>
+        </ul>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('ul li:first').css('border','none');
+            $('ul li:last').css('border','none');
+        })
+    </script>
+</body>
+</html>

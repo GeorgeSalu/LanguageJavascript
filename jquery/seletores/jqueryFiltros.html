@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filtros even e odd</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Product</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <th>Paper Towels</th>
+            <th>The most absorbent paper towels.</th>
+            <th>$18.99</th>
+        </tr>
+        <tr>
+            <th>paper napkins</th>
+            <th>Perfect for your aoutdoor gathering</th>
+            <th>$16.99</th>
+        </tr>
+        <tr>
+            <th>Paper Plates</th>
+            <th>The best value</th>
+            <th>$5.99</th>
+        </tr>
+        <tr>
+            <td>pasltic</td>
+            <td>the essential picnic accessory</td>
+            <td>$2.99</td>
+        </tr>
+    </table>
+    
+    <script>
+        $(document).ready(function(){
+            $('tr:even').css('background','#dedede');
+            $('tr:odd').css('background','#ffffff');
+        })
+    </script>
+</body>
+</html>
