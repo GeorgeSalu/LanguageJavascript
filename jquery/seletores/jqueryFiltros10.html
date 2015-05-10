@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>remova os elemetos html do dom</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <p>I run 4 times a week</p>
+        <p>I lift weigths 3 times a week</p>
+    </div>
+    
+    <script>
+        $(document).ready(function(){
+            $('.content').remove();
+        })
+    </script>
+</body>
+</html>
