@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>URI Encoding</title>
+    <script type="application/javascript">
+       
+        function encodeStrings(){
+            
+            var sOne = encodeURIComponent("http://burningbird.net/index.php?pagename=$18page=$2");
+            var sTwo = encodeURI("http://someapplication.com/?catsname=ZOE&URL=");
+            
+            var sOutput = "<p> Link is  "+ sTwo+ sOne +"</p>";
+            document.write(sOutput);
+            
+            var sOneDecoded = decodeURI(sTwo);
+            var sTwoDecoded = decodeURIComponent(sOne);
+            
+            var sOutputDecoded = "<p>"+ sOneDecoded +"</p><p>"+sTwoDecoded+"</p>";
+            
+            document.write(sOutputDecoded);
+            
+        }
+        
+    </script>
+</head>
+    <body onload="encodeStrings();">
+        <p></p>
+    </body>
+</html>
