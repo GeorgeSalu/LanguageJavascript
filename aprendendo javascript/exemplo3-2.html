@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If..Else</title>
+    <script type="application/javascript">
+    
+        function choices(){
+            
+            var stateCode = 'MO';
+            var taxPercentage = 0.0;
+            
+            if(stateCode === 'OR'){
+                taxPercentage = 3.5;
+            }else if(stateCode === 'CA'){
+                taxPercentage = 5.0;
+            }else if(stateCode === 'MO'){
+                taxPercentage = 1.0;
+            }else {
+                taxPercentage = 2.0
+            }
+            
+            alert(taxPercentage);
+            
+        }
+        
+    </script>
+</head>
+    <body onload="choices()">
+        <p>
+            Imagine a from with options to pick state code
+        </p>
+    </body>
+</html>

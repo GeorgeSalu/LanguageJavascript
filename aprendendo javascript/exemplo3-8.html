@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for ... in</title>
+    <script type="application/javascript">
+    
+        function doFor(){
+            
+            var MyText = {
+                one: "one",
+                two: "two",
+                three: "three"
+            };
+            
+            
+            for(var prop in MyText){
+                document.writeln(prop + "<br/>");
+            }
+            
+            
+        }
+    
+    </script>
+</head>
+    <body onload="doFor()">
+        <p>
+            Some page content
+        </p>
+    </body>
+</html>

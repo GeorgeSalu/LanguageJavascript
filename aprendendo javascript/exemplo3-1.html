@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nested Conditional Statement</title>
+    <script type="application/javascript">
+    
+        function choices(){
+            
+            var prefChoice = 1;
+            var stateChoice = 'OR';
+            var genderChoice = 'F';
+            
+            if(prefChoice === 1){
+                alert("Youre picked option 1. Here is what will happen");
+                
+                if(stateChoice === 'OR'){
+                    
+                    alert("You're picked 1 and you're fromo oregon")
+                    
+                    if(genderChoice === 'M'){
+                    
+                        alert("You're picked 1 and from oregon and you're a man")
+                
+                    }
+                
+                }
+                
+            }
+            
+        }
+        
+    </script>
+</head>
+    <body onload="choices()">
+        <p>
+            Imagine a from with five and a button here... 
+        </p>
+    </body>
+</html>
