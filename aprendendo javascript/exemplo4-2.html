@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NUmber methods</title>
+    <script type="application/javascript">
+    
+        function numbers(){
+            
+            //metodos numericos
+            var newNumber = new Number(34.8896);
+            
+            
+            document.writeln(newNumber.toExponential(3)+"<br />");
+            document.writeln(newNumber.toPrecision(3)+"<br />");
+            document.writeln(newNumber.toFixed(6)+"<br />");
+        
+            var newValue = newNumber.valueOf();
+            
+            document.writeln(newValue.toString(2)+"<br />");
+            document.writeln(newValue.toString(8)+"<br />");
+            document.writeln(newValue.toString(10)+"<br />");
+            document.writeln(newValue.toString(16)+"<br />");
+            
+        }
+    
+    </script>
+</head>
+    <body onload="numbers();">
+        <p>
+            Some page content
+        </p>
+    </body>
+</html>
