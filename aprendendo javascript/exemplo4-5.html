@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+    <script type="application/javascript">
+    
+        function splitString(){
+            
+            var inputString = new String('firstName=Shelley,lastName=Powers,state=Missouri,statement="this is a test of split"');
+            
+            var arrayTokens = inputString.split(',',3);
+            
+            //processa a divisao nas virgulas
+            for(var i = 0; i < arrayTokens.length;i++){
+                
+                document.writeln(arrayTokens[i]+"<br>");
+                
+                //agora divide em iguais e grava apenas o valor 
+                var newTokens = arrayTokens[i].split('=');
+                
+                document.writeln(newTokens[1]+"<br/><br/>");
+            }
+            
+        }
+    
+    </script>
+</head>
+    <body onload="splitString()">
+        <p>
+            Some page content
+        </p>
+    </body>
+</html>
