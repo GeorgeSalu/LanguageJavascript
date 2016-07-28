@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Quote</title>
+    <script type="application/javascript">
+    
+        function getQuote(){
+            
+            var quoteArray = new Array(5);
+            quoteArray[0] = "Quote one";
+            quoteArray[1] = "Quote two";
+            quoteArray[2] = "Quote three";
+            quoteArray[3] = "Quote four";
+            quoteArray[4] = "Quote five";
+            
+            iValue = Math.random();
+            iValue *= 5;
+            iValue = Math.floor(iValue);
+            
+            alert(quoteArray[iValue]);
+            
+        }
+    
+    </script>
+</head>
+    <body onload="getQuote()">
+        <p>
+            Page content
+        </p>
+    </body>
+</html>

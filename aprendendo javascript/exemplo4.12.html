@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FIFO</title>
+    <script type="application/javascript">
+    
+        function pushPop(){
+            
+            //criar fila fifo e adicionar itens usando push
+            var fifoArray = new Array();
+            fifoArray.push("Apple");
+            fifoArray.push("Banana");
+            
+            var ln = fifoArray.push("cherry");
+            
+            //imprime o comprimento da matriz
+            document.writeln("lenght is "+ln+" and array is "+fifoArray+" <br>");
+            
+            //usa shift para alterar os itens da matriz
+            for(var i = 0;i < ln; i++){
+                document.writeln(fifoArray.shift()+"<br>");
+            }
+            
+            //imprime o comprimento
+            document.writeln("lenght now is "+fifoArray.length+" <br ><br > ");
+            
+            //agora a mesma coisa com unshift
+            var fifoNewArray = new Array();
+            fifoNewArray.unshift("learning");
+            fifoNewArray.unshift("Java");
+            fifoNewArray.unshift("Script");
+            ln = fifoNewArray.unshift("Script j");
+            
+            document.writeln("Lenght is "+ln+" and array is "+fifoNewArray+"<br>");
+            
+            //unshift
+            for(var i = 0; i < ln;i++){
+                document.writeln(fifoNewArray.pop()+"<br>");
+            }
+            
+            document.writeln("new Length is "+fifoNewArray.lenght);
+            //
+            
+        }
+    
+    </script>
+</head>
+    <body onload="pushPop()">
+
+    </body>
+</html>

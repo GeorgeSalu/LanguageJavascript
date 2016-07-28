@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date</title>
+    <script type="application/javascript">
+    
+        function testingDate(){
+            
+            //nova data
+            var dtNow = new Date();
+            
+            //configura o dia , mes e ano
+            dtNow.setDate(18);
+            dtNow.setMonth(10);
+            dtNow.setYear(1987);
+            dtNow.setHours(7);
+            dtNow.setMinutes(2);
+            
+            //imprime formatado
+            document.writeln(dtNow.toString()+"<br>");
+            document.writeln(dtNow.toLocaleString()+"<br>");
+            document.writeln(dtNow.toLocaleDateString()+"<br>");
+            document.writeln(dtNow.toLocaleTimeString()+"<br>");
+            document.writeln(dtNow.toGMTString()+"<br>");
+            document.writeln(dtNow.toUTCString()+"<br>");
+            
+        }
+    
+    </script>
+</head>
+    <body onload="testingDate()">
+        <p>Some content</p>
+    </body>
+</html>
