@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Build a Function</title>
+    <script type="application/javascript">
+    
+        function buildFunction(){
+            
+            //solicita a funcao e os argumentos
+            var func = prompt("enter function body");
+            var x = prompt("Enter value of x");
+            var y = prompt("Enter value of y");
+            
+            //chama a funcao anomina
+            var op = new Function("x","y",func);
+            var theAnswer = op(x,y);
+            
+            //imprime os resultados
+            alert("Function is : "+func);
+            alert("x is: "+x+" y is :"+y);
+            alert("The answer is : "+theAnswer);
+            
+        }
+        
+    </script>
+</head>
+    <body onload="buildFunction()">
+        <p>
+            Some content
+        </p>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pass Me</title>
+    <script type="application/javascript">
+    
+        function alterArgs(strLiteral,aryObject){
+            
+            // sobrescrever a string original
+            strLiteral = "Override";
+            aryObject[1] = "2";
+            aryObject[aryObject.length] = "three";
+            
+        }
+        
+        function testParams() {
+            
+            var str = "Original Literal";
+            var ary = new Array("one","two");
+            
+            document.writeln("string literal is "+str+" <br>");
+            document.writeln("Array Object is "+ary+" <br>");
+            
+            alterArgs(str,ary);
+            
+            document.writeln("string literal is "+str+" <br>");
+            document.writeln("Array object is "+ary);
+            
+        }
+    
+    </script>
+</head>
+    <body onload="testParams()">
+        <p>
+            Some page content
+        </p>
+    </body>
+</html>
