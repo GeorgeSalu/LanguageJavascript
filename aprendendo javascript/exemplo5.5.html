@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nested</title>
+    <script type="application/javascript">
+    
+        //função externa
+        function outerFunc(){
+            
+            var punc = "!";
+            
+            //retorna a função interna
+            return function (ext){
+                return base + ext + puc;
+            }
+        }
+        
+        function processNested(){
+            
+            //cria acesso a função interna
+            var baseString = outerFunc("Hello ");
+            
+            //a função interna ainda tem acesso ao argumento da externa
+            var newString = baseString("World");
+            alert(newString);
+            
+            //e ainda
+            var notherString = baseString("Reader");
+            alert(notherString);
+            
+            //cria outra instancia da função interna
+            var anotherBase = outerFunc("Hiya, Hey");
+            
+            //outra string local
+            var lastString = anotherBase("You");
+            alert(lastString);
+            
+        }
+    
+    </script>
+</head>
+    <body onload="outerFunc()">
+        <p>
+            Some content
+        </p>
+    </body>
+</html>

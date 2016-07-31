@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Callbacks</title>
+    <script type="application/javascript">
+    
+        //verifica a função de callbacks de faixas de cores
+        function checkColor(element,index, array){
+            return (element >= 0 && element < 256);
+        }
+    
+        //assegura as tres cores rgb
+        function checkCount(element,inde,array){
+            return (element.length == 3);
+        }
+        
+        function testingCallbacks(){
+            
+            //array de cores
+            var colors = new Array();
+            colors[0] = [0,265,,255];
+            colors[1] = [255,255,255];
+            colors[2] = [255,0,0];
+            colors[3] = [0,255,0];
+            colors[4] = [0,0,255];
+            colors[5] = [-5,999,255];
+            colors[6] = [255,255,11111];
+            
+            //filtro sobre a faixa de cores
+            
+            var testedColors = new Array();
+            for(var i in colors){
+                testedColors[i] = colors[i].filter(checkColor);
+            }
+            
+            // filtra os resultados da primeira passagem
+            document.writeln("<h3>First check</h3>");
+            for(i in testedColors){
+                document.writeln(testedColors[i]+" <br/>");
+            }
+            
+            //filtra se houver menos que tres valores
+            var newTested = testedColors.filter(checkCount);
+            document.writeln("<h3>Second</h3>");
+            
+            //imprime o restante
+            for(i in newTested){
+                document.writeln(newTested[i]+"<br>");
+            }
+            
+        }
+    
+    </script>
+</head>
+    <body onload="testingCallbacks()">
+        <p>
+            Some page
+        </p>
+    </body>
+</html>

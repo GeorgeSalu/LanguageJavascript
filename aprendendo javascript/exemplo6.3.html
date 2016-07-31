@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        div{
+            position: absolute;
+            top: 30px;
+            left: 50px;
+        }
+    </style>
+    <title>Object detection</title>
+    <script type="application/javascript">
+    
+        window.onload = function() {
+            
+            var divElement = document.getElementById("div1");
+            // testa a existencia de filtro
+            var test1 = (divElement.style.filter) ? "filter existes":"filter does not exist";
+            alert(test1);
+            
+            //testa a existencia de filtro
+            var test2 = (typeof(divElement.style.filter) != "undefined") ? "filter exists" : "filter does not exist";
+            alert(test2);
+            
+            //testa a existencia de filtro
+            var test3 = (divElement.style.filter != undefined) ? "filter exists" : "filter does not exists";
+            alert(test3);
+            
+            //testa a existencia da opacidade
+            var test4 = (divElement.style.opacity) ? "opacity exists " : "opacity does not exists";
+            alert(test4);
+            
+            //testa a existencia da opacidade
+            var test5 = (typeof(divElement.style.opacity) != "undefined") ? "opacity exists " : "opacity does not exists";
+            alert(test5);
+            
+            
+        }
+    
+    </script>
+</head>
+    <body>
+        <div id="div1">
+            <p>
+                Detecção 
+            </p>
+        </div>
+    </body>
+</html>

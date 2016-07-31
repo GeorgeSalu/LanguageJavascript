@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Recursion</title>
+    <script type="application/javascript">
+    
+        function numRecursion(){
+            
+            var addNumbers = function sumNumbers(numArray,indexVal,resultArray){
+            
+            //testa recursao
+            if(indexVal == numArray.length)
+                return resultArray;
+            //executa adição numerica
+            resultArray[0] += Number(numArray[indexVal]);
+            
+            //executa concatenação de strings
+            if(resultArray[1].length > 0){
+                resultArray[1] += " and ";
+            }
+            resultArray[1] += numArray[indexVal].toString();
+            //incrementa o indice
+            indexVal++;
+            //chama a função novamente, retorna os resultados
+            return sumNumbers(numArray,indexVal,resultArray);
+            
+        }
+        
+        //cria array numerica e o de resultado
+        var numArray = ['1','35.4','-13','44','0.5'];
+        var resultArray = new Array(0,''); // necessario para o caso inicial
+        
+        //chama função 
+        var result = addNumbers(numArray,0,resultArray);
+        //imprime o resultado
+        document.writeln(result[0]+"<br />");
+        document.writeln(result[1]);
+        
+        }
+    </script>
+</head>
+    <body onload="numRecursion()">
+        <p>
+            Some content
+        </p>
+    </body>
+</html>
