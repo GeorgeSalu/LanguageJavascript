@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event handling</title>
+    <script type="application/javascript">
+    
+        //configura manipuladores de evento para elementos div
+        window.onload=setupEvents;
+        
+        function setupEvents(){
+            
+            document.getElementById("first").onmousedown=function() {
+                alert("first element event");
+            }
+            
+            //funcionalidade de manipulador de eventos para o segundo elemento
+            document.getElementById("second").onmousedown=function() {
+                alert("second element event");
+            }
+            
+            document.onmousedown=function(){
+                alert("document event");
+            }
+            
+        }
+    
+    </script>
+</head>
+    <body>
+        <div id="first" style="padding: 20px;background-color: #ff0;width:150px">
+            <div id="second" style="background-color: #f00;width: 100px;height:100px; border:1px dashed #000">
+                
+            </div>
+        </div>
+    </body>
+</html>

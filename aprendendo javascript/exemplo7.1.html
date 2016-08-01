@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Handling</title>
+    <script type="application/javascript">
+    
+        function helloMsg(){
+            
+            var helloString = "Hello there";
+            alert(helloString);
+            
+        }
+        
+        function helloTwice(){
+            
+            var helloString = "hi again";
+            alert(helloString);
+            
+        }
+        
+        window.onload=helloTwice;
+    
+    </script>
+</head>
+    <body onload="helloMsg()">
+        <p>
+            Some content
+        </p>
+    </body>
+</html>
