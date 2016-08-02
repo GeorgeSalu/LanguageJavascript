@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Capture</title>
+    <script type="application/javascript">
+    
+        function clickMe(event){
+            var eventTarget = event.target ? event.target : event.srcElement;
+            alert(eventTarget+"  "+event.type);
+            var canBeCanceled = event.cancelable ? event.cancelable : "NA";
+            alert("Can be canceled ? : "+canBeCanceled);
+            var bubbleEvent = event.bubbles ? event.bubbles : "NA";
+            alert("Bubbling : "+bubbleEvent);
+            var theTime = event.timeStamp ? event.timeStamp : "NA";
+            alert(theTime);
+        }
+        
+        window.onload=setup;
+        window.onunload=cleanup;
+        
+        function setup(){
+            
+            var evtObject = document.getElementById("clickMe");
+            
+            //testa o modelo de objetos
+            if(evtObject.addEventListener){
+                document.addEventListener("click",clickMe,false);
+            }else if(evtObject.attachEvent){
+                evtObject.attachEvent("onclick",clickMe);
+            }else if(evtObject.onclick){
+                evtObject.onclick=clicMe;
+            }
+            
+        }
+        
+        //limpeza
+        function cleanup(){
+            var evtObject = document.getElementById("clickMe");
+            if(evtObject.detachEvent){
+                evtObject.detachEvent("onclick",clickMe);
+            }
+        }
+        
+    
+    </script>
+</head>
+    <body>
+        <div id="clickMe" style="background-color: #ff0;width: 200px;height: 200px;padding: 20px">
+            <p>
+                Click Me
+            </p>
+        </div>
+    </body>
+</html>
