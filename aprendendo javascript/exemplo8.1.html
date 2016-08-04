@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select</title>
+    <script type="application/javascript">
+    
+        function catchEvent(eventObj, event,eventHandler){
+            
+            if(eventObj.addEventListener){
+                eventObj.addEventListener(event,eventHandler,false);
+            }else if(eventObj.attachEvent){
+                event = "on"+event;
+                event.attachEvent(event,eventHandler);
+            }
+            
+        }
+        
+        cathEvent(window,"load",setupEvents);
+        
+        function setupEvents(event){
+            catchEvent(document.getElementById("someForm"),"submit",checkform);
+        }
+        
+        function checkForm(event){
+            
+            var opts = document.getElementById("someForm").selectOpts.options;
+            
+            for(var i = 0;opts.length;i++){
+                if(opts[i].selected){
+                    alert(opts[i].text+" "+opts[i].value);
+                }
+                //nenhum processamento no lado servidor, cancela o evento de submissao
+                return false;
+            }
+            
+        }
+    
+    </script>
+</head>
+    <body>
+        <form id="someForm" action="">
+            <p>
+                <select id="selectOpts" multiple="multiple">
+                    <option value="Opt1">Options one</option>
+                    <option value="Opt2">Options Two</option>
+                    <option value="Opt3">Options Three</option>
+                </select>
+                <input type="submit" value="Submit"></input>
+            </p>
+        </form>
+    </body>    
+</html>
