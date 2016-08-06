@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The JiT RegEx Machine</title>
+    <script type="application/javascript">
+    
+        if(window.addEventListener){
+            window.addEventListener("load",setupEvents,false);
+        }else if(window.attachEvent){
+            window.attachEvent("onload",setupEvents);
+        }else{
+            window.onload=setupEvents;
+        }
+        
+        function setupEvents(evnt){
+            document.someForm.onSubmit=validateField;
+        }
+        
+        function validateField(evnt){
+            
+            var rgEx = new RegExp(document.someForm.text1.value);
+            var OK = rgEx.exec(document.someForm.text2.value);
+            
+            //resultada e impressao
+            if(!OK){
+                document.someForm.text3.value = "Not a match";
+            }else{
+                document.someForm.text3.value = "The Pattern matched !";
+            }
+            
+            return false;
+        }
+    
+    </script>
+</head>
+    <body>
+        <form name="someForm" style="padding: 10px">
+            Regular Expression:
+            <input type="text" name="text1" /><br/>
+            <textarea name="text2" cols="50" rows="10" ></textarea>
+            Result : <input type="text" name="text3"/><br/>
+            <input type="submit" value="Check RegExp"/>
+        </form>
+    </body>
+</html>
