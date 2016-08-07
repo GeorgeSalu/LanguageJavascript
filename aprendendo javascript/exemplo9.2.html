@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Windows</title>
+    <script type="application/javascript">
+    
+        function catchEvent(eventObj,event,eventHandler){
+            if(eventObj.addeventHandler){
+                eventObj.addEventListener(event,evenHandler,false);
+            }else if(eventObj.attachEvent){
+                event = "on"+event;
+                eventObj.attachEvent(event,eventHandler);
+            }
+        }
+        
+        catchEvent(window,"load",setupEvents);
+        
+        function setupEvents(event){
+            document.forms[0].elements[0].focus();
+            var evtObject = document.getElementById("panicbutton");
+            catchEvent(evtObject,"click",openHelp);
+        }
+        
+        function openHelp(x){
+            var optionString = "width:200,height=150,menubar=no,toolbar=no,scroolbar=no,location=no,resizeble=no";
+            var helpWindow = window.open("helo.html","test",optionString);
+            helpWindow.focus();
+            helpWindow.moveTo(x.screenX,x,screenY);
+            return false;
+        }
+        
+    </script>
+</head>
+    <body>
+        <form id="currentForm" action="">
+            <p>
+                Your Name : <input type="text" size="50" />
+            </p>
+        </form>
+        <div id="panicbutton" style="width: 100px;height:40px;background-color:#f00;padding:5px;margin-left:50px">
+            <p>click for help</p>
+        </div>
+    </body>
+</html>

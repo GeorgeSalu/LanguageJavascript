@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timers</title>
+    <style type="text/css">
+        
+    </style>
+    <script type="application/javascript">
+        
+        window.onload=function(){
+            document.getElementById("block").style.backgroundColor="#ffffff";
+            setTimeout("colorFalsh(255)",300);
+        }
+        
+        function colorFalsh(newColor){
+            
+            var hexVal = newColor.toString(16);
+            //assegura que o comprimento é 2
+            if(hexVal.length < 2){
+                hexVal = "0"+hexVal;
+            }
+            
+            var colorString = "#ffffff"+hexVal;
+            var blockDiv = document.getElementById("block");
+            blockDiv.style.backgroundColor=colorString;
+            
+            if(newColor > 0){
+                newColor -= 5;
+                setTimeout("colorFlash("+newColor+")",50);
+            }
+            
+        }
+        
+    </script>
+</head>
+    <body>
+        <div id="block">
+            <h1>Hello</h1>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InnnerHtml</title>
+    <script type="application/javascript">
+        
+        window.onload=function(){
+            setTimeout("changeElements",3000);
+        }
+        
+        function changeElements(){
+            var elem1 = document.getElementById("elem1");
+            var elem2 = document.getElementById("elem2");
+            var elem3 = document.getElementById("elem3");
+            var temp = elem1.innerHTML;
+            elem1.innerHTML = elem3.innerHTML;
+            elem3.innerHTML = elem2.innerHTML;
+            elem2.innerHTML = tmp;
+        }
+    
+    </script>
+</head>
+    <body>
+        <div id="elem1">
+            <p>paragraph text</p>
+        </div>
+        <div id="elem2">
+            <ul>
+                <li>option 1</li>
+                <li>option 2</li>
+            </ul>
+        </div>
+        <div id="elem3">
+            <p>
+                <a href="exemplo2-2.html">Exemplo 2.2</a>
+            </p>
+        </div>
+    </body>
+</html>
