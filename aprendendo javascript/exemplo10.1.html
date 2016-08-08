@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>innerHtml</title>
+    <script type="application/javascript">
+    
+        //se o cookie estiver abilitado
+        window.onload=function(){
+            if(navigator.cookieEnable){
+                var sum = readCookie("sum");
+                if(sum){
+                    var iSum = parseInt(sum)+1;
+                    alert("cookie count is "+iSum);
+                    if(iSum > 5){
+                        eraseCookie("sum");
+                    }else{
+                        setCookie("sum",iSum);
+                    }
+                }else{
+                    alert("no cookie , setting now");
+                    setCookie("sum",0);
+                }
+            }
+        }
+        
+        //estabelece a expiracao de cookie no ano de 2010
+        function setCookie(key,value){
+            var cookieDate = new Date(2010,11,10,19,30,30);
+            document.cookie = key + "="+encodeURI(value)+"; expires= "+
+                cookieDate.toGMTString()+";path=/";
+        }
+        
+        //cada cookie separado por ponto e virgula
+        function readCookie(key){
+            var cookie = document.cookie;
+            var first = cookie.indeOf(key+"=");
+            //cokkie existente
+            if(first >= 0){
+                var str = cookie.substring(first,cookie.length);
+                var last = str.indexOf(";");
+                //se for o ultimo cookie;
+                if(last < 0) last = str.length;
+                //obtem o valor do cookie
+                str = str.substring(0,last).split("=");
+                return decodeURI(str[1]);
+            }else{
+                return null;
+            }
+        }
+        
+        //estabelece a data de cookie para o passado para apagar
+        function eraseCookie(key){
+            var cookieDate = new Date(2000,11,10,19,30,30);
+            document.cookie=key+"= ; expires="+cookieDate.toGMTString()+"; path=/"
+        }
+        
+    </script>
+</head>
+    <body>
+        <p>
+            Paragraph text.
+        </p>
+    </body>
+</html>
