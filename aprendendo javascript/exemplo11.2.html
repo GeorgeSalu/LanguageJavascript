@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifying HTML Elements</title>
+    <script type="application/javascript">
+    
+        window.onload=function(){
+            
+            //obtem a table e a imagem
+            var tb1 = document.getElementById("table1");
+            tb1.border="5px";
+            tb1.callPadding="5px";
+            
+            var img = document.getElementById("img1");
+            img.vspace="10";
+            
+            //para cada atributo, insere uma linha na tabela
+            var row1 = tb1.insertRow(-1);
+            
+            //criar duas celulas na tabela
+            var cell1 = row1.insertCell(0);
+            var cell2 = row1.insertCell(1);
+            
+            //criar valores de texto
+            var txtAttr1 = document.createTextNode("src");
+            var txtAttr1Val = document.createTextNode(img.src);
+            
+            //insere a valores de texto nas celulas
+            cell1.appendChild(txtAttr1);
+            cell2.appendChild(txtAttr1Val);
+            
+        }
+        
+    </script>
+</head>
+    <body>
+        <p>
+            <img src="java01.png" a alt="test img" class="testimage" id="img1" />
+        </p>
+        <table id="table1">
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+        </table>
+    </body>
+</html>

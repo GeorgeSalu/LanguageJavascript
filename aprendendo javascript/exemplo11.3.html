@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify HMTL Elements</title>
+    <script type="application/javascript">
+    
+        window.onload=function(){
+            
+            //obtem os links e o elemento div
+            var theLinks = document.links;
+            var theHrefs = document.getElementById("hrefs");
+            
+            //para cada link
+            for(var i = 0;i < theLinks.length;i++){
+                
+                //obtem href
+                var href = theLinks.item(i).href;
+                
+                //criar nodo de texto a partir de href, insere em um novo elemento de paragrafo
+                var p = document.createElement("p");
+                var txt = document.createTextNode(href);
+                
+                p.appendChild(txt);
+                
+                //insere novo paragrafo no elemento div
+                theHrefs.appendChild(p);
+                
+            }
+            
+        }
+        
+    </script>
+</head>
+    <body>
+        <p>   
+            curso de flask
+            <a href="http://ctnovatec.com.br/cursos/trilha-python/desenvolvimento-de-aplicacoes-web-python-com-flask/"></a>
+        </p>
+        <p>
+            nodeJs
+            <a href="http://ctnovatec.com.br/cursos/trilha-front-end/curso-de-nodejs/"></a>
+        </p>
+        <p>
+            AngularJS
+            <a href="http://ctnovatec.com.br/cursos/trilha-front-end/curso-angularjs-na-pratica/"></a>
+        </p>
+    </body>
+</html>
