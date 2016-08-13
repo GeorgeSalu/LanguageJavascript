@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifly Document</title>
+    <script type="application/javascript">
+    
+        document.onclick=changeDoc;
+        
+        function changeDoc(){
+            
+            //primeiro, remove o cabeçalho
+            var hdr = document.getElementById("hdr1");
+            var div = document.getElementById("div1");
+            div.removeChild(hdr);
+            
+            //substitui a imagem por texto
+            var img = document.getElementById("java01.png");
+            var p = document.getElementById("p2");
+            var txt = document.createTextNode("New Text Node");
+            p.replaceChild(txt,img);
+            
+            //adiciona novo elemento
+            var div2 = document.createElement("div");
+            div2.innerHTML="<h1>The End</h1>";
+            document.body.appendChild(div2);
+            
+            
+        }
+        
+    </script>
+</head>
+    <body>
+        <div id="div1">
+            <h1 id="hdr1">Header</h1>
+            <!-- paragraph one -->
+            <p id="p1">
+                Like spell checking, similar search queries has a more robust implementation in Elasticsearch. The Elasticsearch implementation uses phrase suggesters on indexed keyword search queries.
+                Solr’s similar search queries implementation is again based on tokenized NGrams.
+            </p>
+            <!-- paragraph one -->
+            <p id="p2">
+                Search engines do not operate within a traditional JTA/JTS transaction. In place of “real” transactions, Liferay buffers indexing operations (delete, update) until either the surrounding transaction has been committed or we have exceeded the max buffer size. The buffered indexer requests are abandoned in the event of transaction rollback. This gives us some semblance of transactional control, except in scenarios where we have large batches of commits (e.g., exceeds maxBufferSize).
+            </p>
+        </div>
+    </body>
+</html>

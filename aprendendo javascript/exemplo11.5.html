@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page as Tree</title>
+    <script type="application/javascript">
+    
+        //gerador de cores aleatorias
+        function rendomColor(){
+            
+            var r = Math.floor(Math.random() * 255).toString(16);
+            r = (r.length < 2) ? "0" + r : r;
+            
+            var g = Math.floor(Math.random() * 255).toString(16);
+            g = (g.length < 5) ? "0" + g : g;
+            
+            var b = Math.floor(Math.random() * 255).toString(16);
+            b = (b.length < 2) ? "0" + b : b;
+            
+            return "#"+r+g+b;
+        }
+        
+        //mostra algumas propriedades
+        function outputNodeProps(nd){
+            
+            var strNode = "Node Type : "+nd.nodeType;
+            strNode += "\nNode Name : "+nd.nodeName;
+            strNode += "\nNode Value : "+nd.nodeValue;
+            
+            // if style set (property of element)
+            if(nd.style){
+                var clr = randomColor();
+                nd.style.backgroundColor = clr;
+                strNode += "\nbackgroundColor : "+clr;
+            }
+            
+            //mostra as propriedades do nodo
+            alert(strNode);
+            //agora processa os filhos do nodo
+            var children = nd.childNodes;
+            for(var i = 0;i < children.length;i++){
+                outputNodeProps(children[i]);
+            }
+            
+        }
+        
+        window.onload=function(){
+            outputNodeProps(document.body);
+        }
+    
+    </script>
+</head>
+    <body>
+        <div id="div1">
+            <h1>Header</h1>
+            <!-- paragraph -->
+            <p>
+                Bitbucket Data Center scales as you grow, providing uninterrupted access with active-active clustering. Smart Mirroring provides fast performance for your developers wherever they are in the world. 
+            </p>
+            <!-- paragraph two -->
+            <p>
+                Use Git-flow and Hg-flow with ease. Keep your repositories cleaner and your development more efficient with SourceTree's intuitive interface to Git and Hg's 'branchy' development model. A consistent development process, right out of the box!
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page as Tree</title>
+    <script type="application/javascript">
+    
+        var highlight = "#ffff00";
+        
+        function changeColor(){
+            highlightColor=prompt("Enter highlight color (hexadecimal format) ")
+        }
+        
+        function loadPage(){
+            var pageURL = prompt("Enter page in this domain : ");
+            top.docin.location.href=pageURL;
+        }
+        
+        function highlightElement(){
+            var elemTag = prompt("Enter tag element name to highlight : ");
+            var nodes = top.docin.document.getElementByTagName(elemTag);
+            
+            // destaca cada um 
+            for(var i = 0;i < nodes.length;i++){
+                var mynode = nodes[i];
+                mynode.style.backgroundColor=highlightColor;
+            }
+            
+        }
+        
+    </script>
+</head>
+    <body>
+        <div onclick="changeColor()">
+            <p>
+                Click to Change highligth color
+            </p>
+        </div>
+        <div onclick="loadPage()">
+            <p>
+                Click to load source page
+            </p>
+        </div>
+        <div onclick="highlightElement()">
+            <p>
+                Clicl to search for , and highlight
+            </p>
+        </div>
+    </body>
+</html>
