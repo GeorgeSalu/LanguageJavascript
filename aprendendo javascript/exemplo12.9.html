@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        .label1{
+            background-color: #000033;
+            width: 400px;
+            padding: 10px;
+            margin: 0 20px;
+            color: #fff;
+            text-align: center;
+            border-bottom: 1px solid #ffffff;
+            cursor: pointer;
+        }
+        .elements{
+            background-color: #ccd9ff;
+            margin: 0 20px;
+            padding: 10px;
+            width: 400px;
+            display: block;
+        }
+    </style>
+    <title>Document</title>
+    <script type="application/javascript">
+        window.onload=function(){
+            var elems = null;
+            var labels = null;
+            if(document.querySelectorAll){
+                elems = document.querySelectorAll('div.elements');
+                labels = document.querySelectorAll('div.label');
+            }else if(document.getElementByClassName){
+                elems = document.getElementByClassName('elements');
+                labels = document.getElementByClassName('label');
+            }
+            if(elems){
+                for(var i = 0;i < elems.lenght;i++){
+                    elems[i].style.display="none";
+                }
+                for(var i = 0;i < labels.lenght;i++){
+                    labels[i].onclik=showBlock;
+                }
+            }
+        }
+        
+        function showBlock(evnt){
+            var theEvent = evnt ? evnt : window.event;
+            var theSrc = theEvent.target ? theEvent.target : theEvent.srcElement;
+            var itemId = "elements" + theSrc.id.substr(5,1);
+            var item = document.getElementById(itemId);
+            if(item.style.display=='none'){
+                item.style.display='block';
+            }else{
+                item.style.display='none';
+            }
+        }
+        
+    </script>
+</head>
+    <body>
+        <form action="">
+            <div class="label" id="label1">
+                Name
+            </div>
+            <div class="element1" id="element1">
+                <label>First Name</label><br/><input type="text" name="firstName" /><br/><br/>
+                <label>Last Name</label><br/><input type="text" name="lastName" /><br/><br/>
+            </div>
+            <div class="label1" id="label1">
+                Address
+            </div>
+            <div class="elements" id="elements2">
+                <label>Street Address</label><br/><input type="text" name="street" /><br/><br/>
+                <label>City</label><br/><input type="text" name="city" /><br/><br/>
+                <label>State</label><br/><input type="text" name="state" /><br/><br/>
+            </div>
+        </form>
+    </body>
+</html>
