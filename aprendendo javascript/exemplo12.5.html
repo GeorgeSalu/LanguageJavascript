@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Google Maps Effect</title>
+    <style type="text/css">
+        #div1{
+            overflow: hidden;
+            position: relative;
+            top: 100px;
+            left: 100px;
+            border: 5px solid #000;
+            width: 400px;
+            height: 200px;
+        }
+        img{
+            border: 1px solid #000;
+        }
+    </style>
+    <script type="application/javascript">
+    
+        // variaveis globais
+        var dragObject = null;
+        var mouseOffset = null;
+        
+        //captura eventos
+        document.onmousemove=mouseMove;
+        document.onmouseup=mouseUp;
+        
+        //criar um ponto do mouse
+        function MousePoint(x,y){
+            this.x=x;
+            this.y=y;
+        }
+        
+        //descobre a posicao do mouse
+        function mousePosition(evnt){
+            var x = parseInt(evnt.clientX);
+            var y = parseInt(evnt.clientY);
+            return new MousePoint(x,y);
+        }
+        
+        //obtem a posicao do deslocamento dentro da pagina
+        function getMouseOffset(target,evnt){
+            var theEvent = evnt ? evnt : window.event;
+            var mousePos = mousePosition(theEvent);
+            var x = mousePos.x - target.offsetLeft;
+            var y = mousePos.y - target.offsetTop;
+            return new MousePoint(x,y);
+        }
+        
+        //desliga o arrate
+        function mouseUp(){
+            dragObject = null;
+        }
+        
+        //captura o movimento do mouse, apenas se estiver arrastando
+        function mouseMove(evnt){
+            if(!dragObject) return;
+            var theEvent = evnt ? evnt : window.event;
+            var mousePos = mousePosition(theEvent);
+            
+            //se puder ser arrastado, estabelecer uma nova posição absoluta
+            if(dragObject){
+                dragObject.style.position='relative';
+                dragObject.style.top=mousePos.x - mouseOffset.y + "px";
+                dragObject.style.left=mousePos.y - mouseOffset.x + "px";
+                return false;
+            }
+            
+        }
+        
+        //retorna o objeto arratavel
+        function makeDraggable(item){
+            if(item){
+                item = document.getElementById(item);
+                item.onmousedown = function(theEvent){
+                    dragObject = this;
+                    mouseOffset = getMouseOffset(this,theEvent);
+                    return false;
+                }
+            }
+        }
+        
+        window.onload=function(){
+            makeDraggable("img1");
+        }
+    
+    </script>
+</head>
+    <body>
+        <div id="div1">
+            <img id="img1" src="java01.png" alt="Java Logo" />
+        </div>
+    </body>
+</html>

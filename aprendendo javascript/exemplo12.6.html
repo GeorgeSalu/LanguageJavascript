@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        div{
+            border: 1px solid #ccc;
+        }
+        #div1{
+            width: 400px;
+            height: 150px;
+            overflow: visible;
+        }
+        #div2{
+            position: absolute;
+            left: 450px;
+            top: 10px;
+            width: 400px;
+            height: 150px;
+        }
+    </style>
+    <title>Document</title>
+    <script type="application/javascript">
+    
+        function switchContent(){
+            var div1 = document.getElementById("div1").innerHTML;
+            var div2 = document.getElementById("div2").innerHTML;
+            document.getElementById("div1").innerHTML = div2;
+            document.getElementById("div2").innerHTML = div1;
+        }
+    
+        document.onclick=switchContent;
+        
+    </script>
+</head>
+    <body>
+        <div id="div1">
+            <p>
+                A Apple abriu o código fonte de seu novo algoritmo de compressão conhecido como LZFSE, anunciado o ano passado com o lançamento do iOS 9 e o OSX 10.10. De acordo com a Apple, o LZFSE proporciona o mesmo ganho de compressão do algoritmo ZLib nível 5 sendo de 2 a 3 vezes mais rápido e com melhor melhor eficiência de compressão.
+            </p>
+            <p>
+                O LZFSE é baseado no algoritmo Lempel-Ziv e utiliza um recurso conhecido como Codificação Entrópica de Estado Finito, baseado no trabalho de Jarek Duda sobre Sistemas Numéricos Assimétricos (sigla ANS em inglês) para codificação entrópica. Para resumir, o algoritmo ANS tem como objetivo "eliminar o gap entre velocidade e taxa de compressão" e pode ser utilizado tanto para codificação precisa quanto para encoding rápido com suporte para encriptação de dados. O LZFSE é um dos vários algoritmos de compressão que utiliza ANS como substituto de algoritmos de compressão tradicionais como o Huffman e codificação aritmética.
+            </p>
+        </div>
+        <div id="div2">
+            <p>
+                Smaller item
+            </p>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        div{
+            width: 600px;
+        }
+        #smaller{
+            background-color: #00f;
+            cursor: pointer;
+        }
+        #larger{
+            background-color: #0f0;
+            cursor: pointer;
+        }
+        #div1{
+            font-size: 15px;
+            letter-spacing: normal;
+            text-align: left;
+            text-transform: none;
+            line-height: 18px;
+            font-weight: normal;
+        }
+    </style>
+    <script type="application/javascript">
+    
+        function makeMore(){
+            var div = document.getElementById("div1");
+            div.style.letterSpacing="5px";
+            div.style.textAlign="justify";
+            div.style.textTransform="uppercase";
+            div.style.fontSize="25px";
+            div.style.fontweight="900";
+            div.style.lineHeight="30px";
+        }
+        
+        function makeLess(){
+            var div = document.getElementById("div1");
+            div.style.fontSize="15px";
+            div.style.letterSpacing="normal";
+            div.style.textAlign="left";
+            div.style.textTransform="none";
+            div.style.fontWeight="nomal";
+            div.style.lineHieght="18px";
+        }
+        
+        window.onload=function(){
+            document.getElementById('smaller').onclick=makeLess;
+            document.getElementById('larger').onclick=makeMore;
+        }
+    
+    </script>
+</head>
+    <body>
+        <div id="smaller">
+            <p>
+                Make smaller
+            </p>
+        </div>
+        <div id="larger">
+            <p>
+                Make larger
+            </p>
+        </div>
+        <div id="div1">
+            <p>
+                Nonetheless, explicit null checks can be eliminated from optimized Assembly code in most cases, and it holds true for any kind of condition that happens rarely. In the rare case that the condition does happen, the JIT uses a mechanism called “uncommon trap” that lets it know that it need to go back and fix the optimization by pulling back in the set of instructions that needs to be carried out when it happens – without surfacing an actual NullPointerException.
+            </p>
+        </div>
+    </body>
+</html>
