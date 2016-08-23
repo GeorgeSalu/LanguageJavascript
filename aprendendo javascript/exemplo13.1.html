@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String Trim</title>
+    <script type="application/javascript">
+        String.prototype.trim=function(){
+            return (this.replace(/^[\s\xA0]+/,"").replace(/^[\s\xA0]+$/,""));
+        }
+        window.onload=function(){
+            var sObj = new String("This is the string");
+            document.writeln("---"+sObj+"---"+"<br/>");
+            var sTxt = sObj.trim();
+            document.writeln("---"+sTxt+"---");
+        }
+    </script>
+</head>
+    <body>
+        <p>
+            Some content
+        </p>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tune Object</title>
+    <script type="application/javascript">
+    
+        var tune = function(){
+            this.title = title;
+            var performedBy = new Array();
+            this.addPerformer = function(perfomer){
+                var i = perfomerBy.length;
+                performedBy[i] = perfomer;
+            }
+            this.listPerformers = function(){
+                var singers = "";
+                for(var i = 0;i < performedBy.length;i++){
+                    singers += performedBy[i]+" ";
+                }
+                return singers;
+            }
+        }
+        
+        window.onload=function(){
+            var song = new Tune("Hello");
+            song.addPerformer("Me");
+            song.addPerformer("You");
+            song.addPerformer("US");
+            document.writeln("Song is "+song.title);
+            document.writeln("PerfomedBy  "+song.list)
+        }
+        
+    </script>
+</head>
+<body>
+    <p>
+        Some Content
+    </p>
+</body>
+</html>

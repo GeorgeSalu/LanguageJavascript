@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Getters and Setters</title>
+    <script type="application/javascript">
+        //Tune é basicamente um objeto de shell
+        function Tune(){
+        }
+        //metodo
+        function printTitle(){
+            document.writeln(this.title+"<br>");
+        }
+        
+        window.onload=function(){
+            //estende o objeto atraves do prototype
+            var t = Tune.prototype;
+            
+            //getter e setter
+            t.__defineGetter__("title",function(){ return "Title is "+this.myTitle });
+            t.__defineSetter__("title",function(tt){ return this.myTitle = tt; });
+            t.print = printTitle;
+            var oneTune = new Tune;
+            oneTune.title = "One Title";
+            oneTune.print();
+            var anotherTune = new Tune;
+            anotherTune.title = "Another Title";
+            anotherTune.print();
+        }
+        
+    </script>
+</head>
+    <body>
+        <p>
+            Some content
+        </p>
+    </body>
+</html>

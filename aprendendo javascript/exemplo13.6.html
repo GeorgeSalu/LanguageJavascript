@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encapsulating</title>
+    <style type="text/css">
+         div{
+            position: absolute;
+            top: 30px;
+            left: 50px;
+        }
+        #div{
+            opacity: 0.0;
+            filter: alpha(opacity=0);
+        }
+    </style>
+    <script type="application/javascript">
+        var theObjs = new Array();
+        document.onclick=function(){
+            //desvanece div1
+            var currentOpacity = theObjs["div1"].objGetOpacity();
+            //fim da transformação
+            if(currentOpacity <= 0){
+                document.onclick=null;
+                return ;
+            }
+            currentOpacity -= 0.1;
+            theObjs["div1"].objSetOpacity(currentOpacity);
+            //mostra div2
+            currentOpacity = theObjs["div2"].objGetOpacity();
+            currentOpacity += 0.1;
+            theObjs["div2"].objSetOpacity(currentOpacity);
+        }
+        
+        function DivObj(obj){
+            this.obj = obj;
+            this.objGetOpacity = function(){
+                return parseFloat(this.obj.style.opacity);
+            }
+            this.alphaOpacity = function(value){
+                var opacity = value *100;
+                this.obj.style.filter="alpha(opacity="+opacity+")";
+            };
+            this.cssOpacity = function(value){
+                this.obj.style.opacity = value;
+            };
+            this.objSetOpacity=function(value){
+                this.alphaOpacity(value);
+                this.cssOpacity(value);
+            }
+        }
+        
+        window.onload=function(){
+            theobjs["div1"] = new DivObj(document.getElementById("div1"));
+            theobjs["div2"] = new DivObj(document.getElementById("div2"));
+            //configura opacidade inicial
+            theobjs["div1"].objSetOpacity(1.0);
+            theobjs["div2"].objSetOpacity(0.0);
+        }
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
