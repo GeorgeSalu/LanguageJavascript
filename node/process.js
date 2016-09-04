@@ -21,3 +21,5 @@ prompt('What is yor name ?',function(data){
 process.on('exit',function(){
     console.log('Bye, bye');
 })
+
+module.exports = prompt;
