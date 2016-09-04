@@ -1,4 +1,5 @@
 var http = require('http');
+var EventEmitter = require('events').EventEmitter;
 
 function handleRequest(request,response){
     response.writeHead(200,{
@@ -11,9 +12,17 @@ function handleRequest(request,response){
 }
 
 var server = http.createServer(handleRequest);
-
+var ee = new EventEmitter();
 server.on('connection',function(client){
-   console.log('There is a new connection => '.concat(client.remoteAddress)); 
+    
+    ee.emit('newConnection');
+    
+    console.log('There is a new connection => '.concat(client.remoteAddress)); 
+
+});
+
+ee.on('newConnection',function(){
+   console.log('Hey, I am a new events registered by event connection from http module'); 
 });
 
 server.listen(3000,'127.0.0.1');
