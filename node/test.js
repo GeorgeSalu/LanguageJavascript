@@ -15,14 +15,21 @@ var server = http.createServer(handleRequest);
 var ee = new EventEmitter();
 server.on('connection',function(client){
     
-    ee.emit('newConnection');
+    ee.emit('newConnection',{
+        num1:2,
+        num2:2
+    });
     
     console.log('There is a new connection => '.concat(client.remoteAddress)); 
 
 });
 
-ee.on('newConnection',function(){
-   console.log('Hey, I am a new events registered by event connection from http module'); 
+ee.on('newConnection',function(data){
+    console.log('Hey, I am a new events registered by event connection from http module'); 
+    
+    var count = parseInt(data.num1) + parseInt(data.num2);
+    console.log('Result of count equals => ',count);
+    console.log('Data => ',data);
 });
 
 server.listen(3000,'127.0.0.1');
