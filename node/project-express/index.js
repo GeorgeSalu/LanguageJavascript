@@ -1,11 +1,22 @@
 var express = require('express');
+var app     =  express();
+var data    = [];
 
-var app =  express();
+//1 - não esta pronto
+//0 - esta pronto
 
-app.get('/',function(request,response){
-    response.end('Hello World');
-})
-
-app.listen(3000,function(){
-    console.log('The express server has been started...');
-})
+app.post('/create/:name/:done',function(request,response){
+    var obj = {
+        name : request.params.name,
+        done : request.params.done
+    };
+    
+    data.push(obj);
+    
+    return response.status(200).json({
+        status  : true,
+        message : 'You data has been created',
+        data    : obj,
+    });
+    
+});
